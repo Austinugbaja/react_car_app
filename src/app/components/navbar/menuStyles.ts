@@ -22,7 +22,7 @@ export default {
   },
   bmMenuWrap: {
     position: "fixed",
-    width: "60%",
+    width: "100%",
     height: "100%",
     top: "0px",
   },
@@ -30,6 +30,7 @@ export default {
     background: "#373a47",
     padding: "2.5em 1.5em 0",
     fontSize: "1.15em",
+    textAlign: "center"
   },
   bmMorphShape: {
     fill: "#373a47",

@@ -1,15 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import CarLogoImg from "../../../assets/images/car-logo.png";
+import CarLogoDarkImg from "../../../assets/images/car-logo-dark.png";
 import tw from "twin.macro";
 
-const Logo = () => {
+interface ILogoProps {
+  color?: "white" | "dark";
+  bgColor?: "white" | "dark";
+}
+
+const Logo = (props: ILogoProps) => {
+  const { color, bgColor } = props;
+
   return (
     <LogoContainer>
       <Image>
-        <img src={CarLogoImg} alt="" />
+        <img src={bgColor === "dark" ? CarLogoDarkImg : CarLogoImg} alt="" />
       </Image>
-      <LogoText>Carplug</LogoText>
+      <LogoText color={color || "dark"}>Carplug</LogoText>
     </LogoContainer>
   );
 };
@@ -31,6 +39,7 @@ const LogoText = styled.div`
         text-black
         m-1
     `}
+  ${({ color }: any) => (color === "white" ? tw`text-white` : tw`text-black`)}
 `;
 
 const Image = styled.div`
