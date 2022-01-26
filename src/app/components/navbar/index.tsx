@@ -29,4 +29,3 @@ const NavbarContainer = styled.div`
     `}
 `;
 
-const LogoContainer = styled.div``;
